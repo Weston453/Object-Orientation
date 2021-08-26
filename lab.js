@@ -5,7 +5,9 @@
 */
 
 //Code here
-
+let me = {
+  age : 25
+}
 
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
@@ -16,21 +18,26 @@
 //and goodBoy (a boolean).
 
 //Code here
-
+let dog = {
+  name : "steve",
+  color : "golden",
+  age : 3,
+  goodBoy : true,
+}
 
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
-
+console.log(dog.name)
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 //Code here
-
+console.log(dog["color"])
 
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
@@ -40,22 +47,33 @@
 */
 
 //Code here
-
+let favoriteThings = {
+  band : "metalica",
+  food : "burrito",
+  person : "Korie",
+  book: "the martian",
+  movie: "the martian",
+  holiday: "beach",
+}
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 */
 
 //Code here
-
+favoriteThings.car = "chevelle";
+favoriteThings.brand = "chevy";
 
 /*
-  Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
-  and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
+  Now use bracket or dot notation to change the value of the 
+  food key in your favoriteThings object to be 'Chicken Nuggets'
+  and change the value of the book key in your favoriteThings 
+  object to be 'Harry Potter'.
 */
 
 //Code here
-
+favoriteThings["food"] = "Chicken Nuggets";
+favoriteThings["book"] = "Harry Potter";
 
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
@@ -71,13 +89,17 @@ var user = {
 // Do not edit the code above.
 
 /*
-  Let's say I, the user, decided to change my name and email address to the following:
-  name -> 'Bryan G. Smith' and email -> 'bryan.smith@devmounta.in'.
-  Make that change without modifying the original object code above.
+  Let's say I, the user, decided to change my name and email 
+  address to the following:
+  name -> 'Bryan G. Smith' and email -> 
+  'bryan.smith@devmounta.in'.
+  Make that change without modifying the original object code 
+  above.
 */
 
 //Code Here
-
+user.email = "bryan.smith@devmounta.in";
+user["name"] = 'Bryan G. Smith';
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 /*
@@ -85,35 +107,66 @@ var user = {
 */
 
 //Code Here
-
+delete user.age
+console.log(user);
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
 /*
-  Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
-  Outside of your class, create an instance of your cat, passing in whatever values you would like.
+  Create a class called 'Cat'. Make sure to call your 
+  constructor, and require these 3 parameters: name, age, color.
+  Outside of your class, create an instance of your cat, 
+  passing in whatever values you would like.
   Print the name of your cat instance using dot notation.
 */
 
 //Code here
+class Cat {
+  constructor(name, age, color) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+}
 
+let feline = new Cat("fluffy", 10, "black")
+console.log(feline.name);
 
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 /*
-  Create a class called 'Wizard'. Make sure to call your constructor, and require these 3 parameters: name, age, favoriteSpell.
-  Add a function to your Wizard class called castSpell. This function should print "{name} has cast {favoriteSpell}"
-  Outside of your class, create an instance of your Wizard, passing in whatever values you would like.
+  Create a class called 'Wizard'. Make sure to call your 
+  constructor, and require these 3 parameters: name, age,
+   favoriteSpell.
+  Add a function to your Wizard class called castSpell. 
+  This function should print "{name} has cast {favoriteSpell}"
+  Outside of your class, create an instance of your Wizard, 
+  passing in whatever values you would like.
   Call the castSpell function on the instance of your wizard.
 */
 
 //Code here
+class Wizard {
+  constructor(name, age, favoriteSpell) {
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+  castSpell() {
+    console.log(`${this.name} has cast ${this.favoriteSpell} `)
+  }
+}
+
+let dumbledoor = new Wizard("weston", 25, "poof!")
+dumbledoor.castSpell()
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 /*
-    Write a class called Phone. We'll use it as if we were creating
+    Write a class called Phone. We'll use it as if we were 
+    creating
     phone objects to keep track of inventory using an app.
 
-    Phone will build phone objects with brand, model, storage, color, price, and sold properties.
+    Phone will build phone objects with brand, model, storage,
+     color, price, and sold properties.
 
     Write a constructor that sets those values -- all of the values 
     should come from the constructors parameters except sold, which
@@ -132,7 +185,23 @@ var user = {
 */
 
 //Code Here
-
+class Phone {
+  constructor(brand, model, storage, color, price){
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false;
+  }
+sell() {
+  this.sold = true;
+  console.log(`${this.brand} ${this.model} has been sold.`)
+}
+changePrice(newPrice) {
+  this.price = newPrice;
+}
+}
   
 /*
     Next make three new phone instances using your class.
@@ -145,6 +214,9 @@ var user = {
 */
 
 //Code Here
+let Phone1 = new Phone("google", "pixel", 2000, "black", 500);
+let Phone2 = new Phone("Apple", "10x", "125", "white", 1000);
+let Phone3 = new Phone("Android", "something", 5, "black", 600);
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -154,7 +226,8 @@ var user = {
 */ 
 
 //Code Here 
-
+Phone3.changePrice(550);
+console.log(Phone3);
 
 /*
   Now call the sell method on one of your other phone objects
@@ -163,14 +236,19 @@ var user = {
 */
 
 //Code Here 
-
+Phone1.sell();
+console.log(Phone1);
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 
 /*
-  Use the spread operator to create a copy of the colors object below.
+  Use the spread operator to create a copy of the colors 
+  object below.
   Store the copy in a variable called colorsCopy.
-  Note: We did not cover the spread operator in class. We do not expect you to know how to use it. Challenge yourself by going online and researching what the spread operator is and how to use it.
+  Note: We did not cover the spread operator in class.
+   We do not expect you to know how to use it. Challenge 
+   yourself by going online and researching what the spread 
+   operator is and how to use it.
 */
 
 //do not edit this object
@@ -182,7 +260,7 @@ const colors = {
 //do not edit this object
 
 //Code Here 
-
+let colorsCopy = { ...colors};
 
 
 /*
@@ -210,10 +288,10 @@ const shippingInfo = {
 //do not edit the objects above
 
 //Code Here
-
+const helenInfo = { ...contactInfo, ...shippingInfo};
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
-
+console.log(helenInfo);
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 
@@ -228,14 +306,24 @@ const shippingInfo = {
 */
 
 //Code Here 
-
+class Vehicle {
+  constructor(capacity, color, mileage) {
+    this.capacity = capacity;
+    this.color = color;
+    this.mileage = mileage;
+  }
+  move(miles) {
+    this.mileage += miles;
+    console.log(this.mileage);
+  }
+}
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
 //Code Here
-
+let myFirstVehicle = new Vehicle(5, "blue", 50000);
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
@@ -247,17 +335,24 @@ const shippingInfo = {
 */
 
 //Code Here
-
+class Motorcycle extends Vehicle {
+  constructor(capacity, color, mileage, make, isCool) {
+    super(capacity, color, mileage)
+    this.make = make;
+    this.isCool = isCool;
+  }
+}
 /*
-  Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
+  Create a Motorcycle using your new class and save it to a 
+  variable called myFirstMotorcycle
 */
 
 //Code Here 
-
+let myFirstMotorcycle = new Motorcycle(2,"black", 2000, "Yamaha", true);
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
-
+myFirstMotorcycle.move(150);
 /*
   Let's make another class based off of Vehicle. 
 
@@ -274,7 +369,24 @@ const shippingInfo = {
 */
 
 //Code Here
-
+class Boat extends Vehicle {
+  constructor(capacity, color, mileage, name, type, isSeaworthy) {
+    super(capacity, color, mileage)
+    this.name = name;
+    this.type = type;
+    this.isSeaworthy = isSeaworthy;
+  }
+  checkSeaworthiness() {
+    if (this.isSeaworthy) {
+      console.log(`The ${this.color} ${this.type} ${this.name} is seaworthy!`)
+    } else {
+      console.log(`You need to get your ${this.type} in shape!`)
+    }
+  }
+  performMaintenance() {
+    this.isSeaworthy = true;
+  }
+}
 
 /*
   Create a new boat using your class. You can choose whatever values you like for all the 
@@ -282,21 +394,22 @@ const shippingInfo = {
 */
 
 //Code Here
-
+let myFirstBoat = new Boat(10, "white", 100, "There She Blows", "Jetski", false);
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
 //Code Here
-
+myFirstBoat.checkSeaworthiness();
 /*
   Now run the performMaintenance method on your boat
 */
 
 //Code Here 
-
+myFirstBoat.performMaintenance();
 /*
   Check the seaworthiness once more (you should be ready for the water!)
 */
 
 //Code Here
+myFirstBoat.checkSeaworthiness();
